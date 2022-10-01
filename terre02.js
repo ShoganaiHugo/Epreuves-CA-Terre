@@ -1,10 +1,17 @@
-let maPhrase = "Bonjour je suis super content !";
-
 function afficher(arrayOfWord) {
-  let arrayOfWord = arrayOfWord.split(" ");
-  for ( let i = 0; i != arrayOfWord.length; i++ ) {
-    console.log(arrayOfWord[i]);
+  // On vérifie qu'il existe bien un paramètre
+  if (arrayOfWord.length !== 0) {
+    
+    // On affiche les paramètres lignes par ligne
+    for ( let i = 0; i !== arrayOfWord.length; i++ ) {
+      console.log(arrayOfWord[i]);
+    }
+  } else {
+
+    // On gère les erreurs de saisi
+    console.log('Merci de saisir des arguments.');
   }
+  
 }
 
-afficher(maPhrase);
+return afficher(process.argv.slice(2));
