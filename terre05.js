@@ -1,19 +1,24 @@
-function div(){
-  var dividende = parseInt(process.argv.slice(2));
-  var diviseur = parseInt(process.argv.slice(3));
+function div(dividende, diviseur){
 
-  if (diviseur == 0 || diviseur > dividende) {
+  if (dividende.length !== 0 && diviseur.length !== 0 && typeof dividende === 'number' && typeof diviseur === 'number') {
+    if (diviseur == 0 || diviseur > dividende) {
 
-    return "erreur";
+      return "erreur";
 
+    } else {
+
+      const resultat = Math.floor(dividende / diviseur);
+      const reste = dividende % diviseur;
+
+      return "résultat : " + resultat + "\n" + "reste : " + reste;
+    }
+  
   } else {
-
-    let resultat = Math.floor(dividende / diviseur);
-    let reste = dividende % diviseur;
-
-    return "résultat : " + resultat + "\n" + "reste : " + reste;
+    return 'erreur.';
   }
+
+  
 }
 
 
-console.log(div());
+console.log(div(parseInt(process.argv.slice(2)), parseInt(process.argv.slice(3))));

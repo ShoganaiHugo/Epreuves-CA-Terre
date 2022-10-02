@@ -1,7 +1,7 @@
 function tri(arg) {
   if (arg.length !== 0 && typeof arg !== 'undefined') {
 
-    var result = '';
+    let result = '';
 
     // Pour verifier qu'on insère bien que des int
     for (let i = 0; i < arg.length; i++) {

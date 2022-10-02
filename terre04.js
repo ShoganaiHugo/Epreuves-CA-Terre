@@ -1,6 +1,3 @@
-var aTester = process.argv.slice(2);
-
-
 function pairImpair(num) {
 
   if (parseInt(num) != num) {
@@ -17,4 +14,4 @@ function pairImpair(num) {
 }
 
 
-console.log(pairImpair(aTester));
+console.log(pairImpair(process.argv.slice(2)));

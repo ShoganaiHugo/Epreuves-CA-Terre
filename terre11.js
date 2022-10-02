@@ -1,7 +1,7 @@
 function to12h(time) {
   if (time.length !== 0 && process.argv.slice(3).length === 0) {
 
-    var index = time[0].indexOf(":");
+    const index = time[0].indexOf(":");
 
     if (index !== -1) {
       arr = time[0].split(':');

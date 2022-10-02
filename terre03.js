@@ -1,12 +1,20 @@
 let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-var start = alphabet.indexOf(process.argv.slice(2));
-
 function sayAlphabet(str) {
-  for ( i = start, newAlphabet = ''; i < str.trim().length; i++) {    
-    newAlphabet += str[i];
+
+  let newAlphabet = '';
+
+  if (str.length !== 0 && isNaN(str) === true && typeof str[1] === 'undefined' && str[0].length === 1) {
+
+    for (let i = alphabet.indexOf(str); i < alphabet.length; i++) {    
+      newAlphabet += alphabet[i];
+    }
+    return newAlphabet;
+
+  } else {
+    return "Tu ne m'auras pas !"
   }
-  return newAlphabet;
+  
 }
 
-console.log(sayAlphabet(alphabet));
+console.log(sayAlphabet(process.argv.slice(2)));
